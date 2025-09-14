@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #2d2d2d;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #1e1e1e;
+}
+
+.message {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.bot {
+  justify-content: flex-start;
+}
+
+.message .text {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+/* Better emoji and special character support */
+.message .text {
+  font-family: Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+
+/* Markdown styling for bot messages */
+.message.bot .text h1,
+.message.bot .text h2,
+.message.bot .text h3,
+.message.bot .text h4,
+.message.bot .text h5,
+.message.bot .text h6 {
+  margin: 8px 0 4px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.message.bot .text p {
+  margin: 4px 0;
+}
+
+.message.bot .text strong {
+  font-weight: bold;
+  color: #6bb6ff;
+}
+
+.message.bot .text em {
+  font-style: italic;
+}
+
+.message.bot .text ul,
+.message.bot .text ol {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.message.bot .text li {
+  margin: 2px 0;
+}
+
+.message.bot .text code {
+  background-color: #555;
+  color: #e0e0e0;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.message.bot .text blockquote {
+  border-left: 3px solid #4a90e2;
+  padding-left: 10px;
+  margin: 8px 0;
+  font-style: italic;
+}
+
+/* Special styling for numbered lists and options */
+.message.bot .text ol li {
+  margin: 6px 0;
+  padding: 2px 0;
+}
+
+.message.bot .text ul li {
+  margin: 4px 0;
+  padding: 2px 0;
+}
+
+/* Better spacing for paragraphs */
+.message.bot .text p:first-child {
+  margin-top: 0;
+}
+
+.message.bot .text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Style for inline code and special formatting */
+.message.bot .text code {
+  background-color: rgba(74, 144, 226, 0.2);
+  color: #6bb6ff;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.message.user .text {
+  background-color: #4a90e2;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message.bot .text {
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  border-bottom-left-radius: 4px;
+}
+
+.input-area {
+  padding: 20px;
+  background-color: #2d2d2d;
+  border-top: 1px solid #555;
+  display: flex;
+  gap: 10px;
+}
+
+.input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #555;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+}
+
+.input:focus {
+  border-color: #4a90e2;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.send-btn {
+  padding: 12px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.send-btn:hover:not(:disabled) {
+  background-color: #357abd;
+}
+
+.send-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .app {
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .header {
+    padding: 15px;
+  }
+  
+  .header h1 {
+    font-size: 20px;
+  }
+  
+  .messages {
+    padding: 15px;
+  }
+  
+  .input-area {
+    padding: 15px;
+  }
+  
+  .message .text {
+    max-width: 85%;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
