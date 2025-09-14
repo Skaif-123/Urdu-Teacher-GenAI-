@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.7",
+    "@fontsource/noto-nastaliq-urdu": "^5.2.7",
+    "@fontsource/noto-sans-devanagari": "^5.2.7",
     "axios": "^1.11.0",
     "prismjs": "^1.30.0",
     "react": "^19.1.1",

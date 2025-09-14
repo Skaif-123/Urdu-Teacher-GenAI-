@@ -12,6 +12,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@fontsource/inter": "^5.2.7",
+    "@fontsource/noto-nastaliq-urdu": "^5.2.7",
+    "@fontsource/noto-sans-devanagari": "^5.2.7",
     "@google/genai": "^1.15.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
