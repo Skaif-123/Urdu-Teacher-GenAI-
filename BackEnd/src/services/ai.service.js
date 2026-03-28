@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: "E:/Proper Full Working Projects 2025/UrduLearner/.env",
+  path: "UrduLearner\BackEnd\.env",
 });
 
 const fs = require('fs');
@@ -17,8 +17,8 @@ const systemInstruction = fs.readFileSync(
 
 const review = async function generateContent(prompt) {
   const result = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
-    contents: prompt,
+    model: "gemini-3-flash-preview",
+    contents: "Hello there",
     config: {
       systemInstruction: systemInstruction,
     },
